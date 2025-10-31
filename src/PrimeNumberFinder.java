@@ -11,7 +11,23 @@ public class PrimeNumberFinder {
 
         System.out.println("First " + maxPrimes + " prime numbers:");
 
-        // TODO: Implement the prime number finding logic here
+        while (count < maxPrimes) {
+            boolean isPrime = true;
+
+            for (int i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                System.out.print(number + " ");
+                count++;
+            }
+
+            number++;
+        }
 
         scanner.close();
     }
